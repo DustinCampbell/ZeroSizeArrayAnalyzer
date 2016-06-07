@@ -28,7 +28,7 @@ namespace ZeroSizeArrayAnalyzer
             // This method is run the first time the analyzer is instantiated.
             // It lets the analyzer declare a callback that will be run in the
             // future when a particular event occurs during analysis, such as
-            // the analyzer of a syntax node has occurred.
+            // the analysis of a syntax node has occurred.
 
 
         }
