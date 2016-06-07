@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.25302.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSizeArrayAnalyzer", "ZeroSizeArrayAnalyzer\ZeroSizeArrayAnalyzer\ZeroSizeArrayAnalyzer.csproj", "{2F0C764A-FCB0-4CBB-A4C5-2BDE79E582B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSizeArrayAnalyzer", "src\ZeroSizeArrayAnalyzer\ZeroSizeArrayAnalyzer.csproj", "{2F0C764A-FCB0-4CBB-A4C5-2BDE79E582B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSizeArrayAnalyzer.Vsix", "ZeroSizeArrayAnalyzer\ZeroSizeArrayAnalyzer.Vsix\ZeroSizeArrayAnalyzer.Vsix.csproj", "{7C8A8700-0D8D-4819-86A6-A3D69DFD67A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSizeArrayAnalyzer.Vsix", "src\ZeroSizeArrayAnalyzer.Vsix\ZeroSizeArrayAnalyzer.Vsix.csproj", "{7C8A8700-0D8D-4819-86A6-A3D69DFD67A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
