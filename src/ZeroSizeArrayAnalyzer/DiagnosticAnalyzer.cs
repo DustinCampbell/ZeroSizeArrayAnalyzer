@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
+using Microsoft.CodeAnalysis.Semantics;
 
 namespace ZeroSizeArrayAnalyzer
 {
@@ -29,7 +30,6 @@ namespace ZeroSizeArrayAnalyzer
             // It lets the analyzer declare a callback that will be run in the
             // future when a particular event occurs during analysis, such as
             // the analysis of a syntax node has occurred.
-
 
         }
     }
