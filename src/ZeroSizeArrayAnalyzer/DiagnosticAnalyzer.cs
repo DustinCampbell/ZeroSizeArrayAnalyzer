@@ -1,13 +1,13 @@
 using System.Collections.Immutable;
-using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace ZeroSizeArrayAnalyzer
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class ZeroSizeArrayAnalyzerAnalyzer : DiagnosticAnalyzer
+    public class ZeroSizeArrayDiagnosticAnalyzer : DiagnosticAnalyzer
     {
+        #region Metadata
         public const string DiagnosticId = "ZeroSizeArrayAnalyzer";
 
         // You can change these strings in the Resources.resx file. If you do not want your analyzer to be localize-able, you can use regular strings for Title and MessageFormat.
@@ -17,30 +17,20 @@ namespace ZeroSizeArrayAnalyzer
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(Resources.AnalyzerDescription), Resources.ResourceManager, typeof(Resources));
         private const string Category = "Naming";
 
+        // You can set the severity of your analyzer in your rule declaration
         private static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
+        #endregion
 
         public override void Initialize(AnalysisContext context)
         {
-            // TODO: Consider registering other actions that act on syntax instead of or in addition to symbols
-            // See https://github.com/dotnet/roslyn/blob/master/docs/analyzers/Analyzer%20Actions%20Semantics.md for more information
-            context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
-        }
+            // This method is run the first time the analyzer is instantiated.
+            // It lets the analyzer declare a callback that will be run in the
+            // future when a particular event occurs during analysis, such as
+            // the analyzer of a syntax node has occurred.
 
-        private static void AnalyzeSymbol(SymbolAnalysisContext context)
-        {
-            // TODO: Replace the following code with your own analysis, generating Diagnostic objects for any issues you find
-            var namedTypeSymbol = (INamedTypeSymbol)context.Symbol;
 
-            // Find just those named type symbols with names containing lowercase letters.
-            if (namedTypeSymbol.Name.ToCharArray().Any(char.IsLower))
-            {
-                // For all such symbols, produce a diagnostic.
-                var diagnostic = Diagnostic.Create(Rule, namedTypeSymbol.Locations[0], namedTypeSymbol.Name);
-
-                context.ReportDiagnostic(diagnostic);
-            }
         }
     }
 }
