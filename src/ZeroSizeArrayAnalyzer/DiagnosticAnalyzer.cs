@@ -4,7 +4,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace ZeroSizeArrayAnalyzer
 {
-    [DiagnosticAnalyzer(LanguageNames.CSharp)]
+    [DiagnosticAnalyzer(LanguageNames.CSharp, LanguageNames.VisualBasic)]
     public class ZeroSizeArrayDiagnosticAnalyzer : DiagnosticAnalyzer
     {
         #region Metadata

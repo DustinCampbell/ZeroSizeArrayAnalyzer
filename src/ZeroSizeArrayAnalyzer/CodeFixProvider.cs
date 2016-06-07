@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CodeFixes;
 
 namespace ZeroSizeArrayAnalyzer
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ZeroSizeArrayAnalyzerCodeFixProvider)), Shared]
+    [ExportCodeFixProvider(LanguageNames.CSharp, LanguageNames.VisualBasic, Name = nameof(ZeroSizeArrayAnalyzerCodeFixProvider)), Shared]
     public class ZeroSizeArrayAnalyzerCodeFixProvider : CodeFixProvider
     {
         private const string title = "Make uppercase";
